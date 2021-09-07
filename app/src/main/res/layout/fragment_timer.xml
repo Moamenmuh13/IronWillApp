@@ -68,19 +68,19 @@
             android:layout_marginTop="28dp"
             android:text="@string/start"
             android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/pauseBtn"
+            app:layout_constraintEnd_toStartOf="@+id/resetBtn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
         <Button
-            android:id="@+id/pauseBtn"
+            android:id="@+id/resetBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
-            android:text="@string/pause"
+            android:text="@string/reset"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/startBtn"
@@ -95,10 +95,12 @@
             android:layout_marginTop="28dp"
             android:background="@drawable/border"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/rankBtn"
-            app:layout_constraintTop_toBottomOf="@+id/pauseBtn">
+            app:layout_constraintTop_toBottomOf="@+id/resetBtn"
+            app:layout_constraintVertical_bias="0.074">
 
             <ImageView
                 android:layout_width="50dp"
@@ -143,19 +145,23 @@
             android:layout_marginTop="28dp"
             android:background="@drawable/border"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/historyBtn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startBtn">
+            app:layout_constraintTop_toBottomOf="@+id/startBtn"
+            app:layout_constraintVertical_bias="0.069">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="56dp"
+                android:layout_height="52dp"
                 android:layout_centerInParent="true"
                 android:backgroundTint="@color/blue_500"
                 android:contentDescription="@string/my_rank"
                 app:srcCompat="@drawable/ic_star_24" />
         </RelativeLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
