@@ -14,4 +14,17 @@ object HelperMethods {
         fragmentTransaction.replace(R.id.myNavHostFragment, fragment!!, FRAGMENT_TAG)
         fragmentTransaction.commit()
     }
+
+    fun changeFragmentBackStack(activity: MainActivity, fragment: Fragment?) {
+        val fragmentTransaction: FragmentTransaction =
+            activity.supportFragmentManager.beginTransaction()
+        if (activity.supportFragmentManager.backStackEntryCount > 0) {
+            activity.supportFragmentManager.popBackStackImmediate()
+        }
+        fragmentTransaction.replace(R.id.myNavHostFragment, fragment!!, FRAGMENT_TAG)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+        fragmentTransaction.commit()
+    }
+
 }

@@ -20,13 +20,11 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:layout_marginTop="100dp"
             android:background="@drawable/circle_shape2"
             android:indeterminate="false"
             android:max="24"
-            android:progress="10"
+            android:progress="0"
             android:progressDrawable="@drawable/circle_shape" />
 
         <LinearLayout
@@ -49,7 +47,6 @@
                 android:gravity="center"
                 android:minWidth="100dp"
                 android:minHeight="45dp"
-                android:text="@string/days"
                 android:textColor="@color/black_text"
                 android:textSize="26sp" />
 
@@ -59,7 +56,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_light"
                 android:gravity="center"
-                android:text="@string/time"
                 android:textColor="@color/black_text"
                 android:textSize="28sp"
                 android:textStyle="normal" />

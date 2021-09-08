@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupFirstFragment() {
-        HelperMethods.changeFragment(this, TimerFragment())
+        HelperMethods.changeFragmentBackStack(this, TimerFragment())
     }
 
 

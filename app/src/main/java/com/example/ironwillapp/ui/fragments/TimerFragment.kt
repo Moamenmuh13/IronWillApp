@@ -44,6 +44,7 @@ class TimerFragment : Fragment(), View.OnClickListener {
         serviceIntent = Intent(context, TimerService::class.java)
         context?.registerReceiver(updateTime, IntentFilter(TimerService.TIMER_UPDATED))
 //        val serviceTime = activity.intent.getDoubleExtra()
+        startTimer()
 
     }
 
@@ -73,9 +74,6 @@ class TimerFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
-        startTimer()
-        binding.startBtn.isEnabled = false
-
 
     }
 
@@ -91,10 +89,6 @@ class TimerFragment : Fragment(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when (p0) {
             binding.startBtn -> {
-                startTimer()
-                binding.startBtn.isEnabled = false
-                binding.timer.visibility = View.VISIBLE
-                binding.days.visibility = View.VISIBLE
             }
 
             binding.resetBtn -> {
@@ -102,22 +96,28 @@ class TimerFragment : Fragment(), View.OnClickListener {
             }
 
             binding.rankBtn -> {
-                HelperMethods.changeFragment(activity as MainActivity, RankFragment())
+                HelperMethods.changeFragmentBackStack(activity as MainActivity, RankFragment())
             }
 
             binding.historyBtn -> {
-                HelperMethods.changeFragment(activity as MainActivity, HistoryFragment())
+                HelperMethods.changeFragmentBackStack(activity as MainActivity, HistoryFragment())
             }
         }
     }
 
     private fun startTimer() {
+        timeStarted = true
         context?.startService(serviceIntent)
         serviceIntent.putExtra(TimerService.TIME_EXTRA, TIME)
-        timeStarted = true
 
     }
 
+
+    private fun stopTimer() {
+        timeStarted = false
+        context?.stopService(serviceIntent)
+        serviceIntent.putExtra(TimerService.TIME_EXTRA, TIME)
+    }
 
     private fun resetTimer() {
         val resetAlert = AlertDialog.Builder(activity as MainActivity)
@@ -126,7 +126,6 @@ class TimerFragment : Fragment(), View.OnClickListener {
             .setPositiveButton(
                 "Reset"
             ) { _, _ ->
-                timer.cancel()
                 binding.startBtn.isEnabled = true
 
             }

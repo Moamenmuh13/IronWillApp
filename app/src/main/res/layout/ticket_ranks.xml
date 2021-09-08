@@ -14,19 +14,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:clickable="false"
         android:background="#F6F6F6"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/rankView"
             android:layout_width="match_parent"
-            android:background="@drawable/border_without_frame"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:gravity="center"
+            android:background="@drawable/border_without_frame"
             android:elevation="5dp"
+            android:gravity="center"
             android:orientation="vertical">
 
 
@@ -54,11 +52,11 @@
                 android:id="@+id/numOfDays"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/lato"
+                android:gravity="center"
                 android:text="@string/reach_1_day"
                 android:textColor="@color/black_text_secondary"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 

@@ -10,7 +10,6 @@ class TimerService : Service() {
     override fun onBind(p0: Intent?): IBinder? = null
 
     private val timer = Timer()
-
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         val time = intent.getDoubleExtra(TIME_EXTRA, 0.0)
         timer.scheduleAtFixedRate(TimeTask(time), 0, 1000)
@@ -30,7 +29,14 @@ class TimerService : Service() {
             sendBroadcast(intent)
 
         }
+
+
     }
+
+    public fun stopTimer() {
+        timer.cancel()
+    }
+
 
     companion object {
         const val TIMER_UPDATED = "timerUpdated"

@@ -36,17 +36,16 @@ class RankFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViews(view)
         val dataSource = RanksData().ranksData()
 
-        binding.recyclerView.adapter = RanksAdapter(dataSource, activity as MainActivity)
+        binding.myRankRecyclerView.adapter = RanksAdapter(dataSource, activity as MainActivity)
     }
 
-    private fun initViews(view: View) {
-        recyclerView = view.findViewById(R.id.myRankRecyclerView)
-
-    }
 
 }
+
+
+
