@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Iron Will</string>
-    <string name="time">00:00:00</string>
+    <string name="time">13:41:19</string>
     <string name="zero">00:</string>
     <string name="start">start</string>
     <string name="pause">pause</string>
@@ -8,6 +8,11 @@
     <string name="my_rank">My Rank</string>
     <string name="scout">Scout</string>
     <string name="reach_1_day">Reach 1 day</string>
-    <string name="days">0 Days</string>
+    <string name="days">6 Days</string>
+    <string name="reason">No reason</string>
+    <string name="from_date">01 Sep 2021 05:30</string>
+    <string name="to_date">07 Sep 2021 18:56</string>
     <string name="reset">Reset</string>
+    <string name="quot">\"Fall seven times , stand up eight\"</string>
+    <string name="to_sign"><![CDATA[-->]]></string>
 </resources>

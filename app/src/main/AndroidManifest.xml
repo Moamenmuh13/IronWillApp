@@ -11,8 +11,7 @@
         android:theme="@style/Theme.IronWillApp">
         <activity
             android:name=".ui.activities.MainActivity"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +19,9 @@
             </intent-filter>
         </activity>
         <service android:name=".TimerService" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

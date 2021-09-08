@@ -45,7 +45,7 @@ class RankFragment : Fragment() {
     }
 
     private fun initViews(view: View) {
-        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView = view.findViewById(R.id.myRankRecyclerView)
 
     }
 

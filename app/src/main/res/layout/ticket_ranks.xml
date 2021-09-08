@@ -7,53 +7,60 @@
             name="rankViewModel"
             type="com.example.ironwillapp.models.Ranks" />
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
+
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/grey_200"
+        android:layout_margin="2dp"
         android:clickable="false"
+        android:background="#F6F6F6"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/rankView"
             android:layout_width="match_parent"
+            android:background="@drawable/border_without_frame"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/border"
-            android:clickable="false"
             android:gravity="center"
+            android:elevation="5dp"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/rank"
-                android:layout_width="match_parent"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/lato"
                 android:gravity="center"
+                android:lineSpacingExtra="3.3sp"
+                android:text="@string/scout"
                 android:textColor="@color/black_text"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <View
                 android:id="@+id/line"
-                android:layout_width="250dp"
-                android:layout_height="2dp"
-                android:background="@color/grey_500" />
+                android:layout_width="200dp"
+                android:layout_height="1dp"
+                android:background="#b1b1b1" />
 
             <TextView
                 android:id="@+id/numOfDays"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="@string/reach_1_day"
+                android:textColor="@color/black_text_secondary"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textColor="@color/black_text"
-                android:textSize="14sp" />
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </LinearLayout>
