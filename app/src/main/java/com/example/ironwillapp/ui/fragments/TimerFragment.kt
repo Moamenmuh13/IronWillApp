@@ -121,6 +121,11 @@ class TimerFragment : Fragment(), View.OnClickListener {
     }
 
 
+    private fun stopTimer() {
+        running = false
+        context?.stopService(serviceIntent)
+    }
+
     private fun resetTimer() {
 
 //        sleep(5000)
@@ -185,9 +190,9 @@ class TimerFragment : Fragment(), View.OnClickListener {
         ) + ":" + String.format("%02d", seconds)
     }
 
-//
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        stopTimer()
-//    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopTimer()
+    }
 }
