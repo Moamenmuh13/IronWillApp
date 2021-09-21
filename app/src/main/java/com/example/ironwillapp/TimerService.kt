@@ -16,10 +16,6 @@ class TimerService : Service() {
         return START_STICKY
     }
 
-    override fun onDestroy() {
-        timer.cancel()
-        super.onDestroy()
-    }
 
     private inner class TimeTask(private var time: Double) : TimerTask() {
         override fun run() {
@@ -33,14 +29,20 @@ class TimerService : Service() {
 
     }
 
-    public fun stopTimer() {
+    fun stopTimer() {
         timer.cancel()
+
     }
 
 
     companion object {
         const val TIMER_UPDATED = "timerUpdated"
         const val TIME_EXTRA = "timeExtra"
+    }
+
+    override fun onDestroy() {
+        stopTimer()
+        super.onDestroy()
     }
 
 }
