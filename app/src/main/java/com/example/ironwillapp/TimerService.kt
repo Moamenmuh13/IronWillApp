@@ -10,9 +10,14 @@ class TimerService : Service() {
     override fun onBind(p0: Intent?): IBinder? = null
 
     private val timer = Timer()
+    private var TIMER_VALUE = 0.0
+    private var DELAY: Long = 0
+    private var MILE_SECONDE: Long = 1000
+
+
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        val time = intent.getDoubleExtra(TIME_EXTRA, 0.0)
-        timer.scheduleAtFixedRate(TimeTask(time), 0, 1000)
+        val time = intent.getDoubleExtra(TIME_EXTRA, TIMER_VALUE)
+        timer.scheduleAtFixedRate(TimeTask(time), DELAY, MILE_SECONDE)
         return START_STICKY
     }
 
@@ -23,17 +28,9 @@ class TimerService : Service() {
             time++
             intent.putExtra(TIME_EXTRA, time)
             sendBroadcast(intent)
-
         }
 
-
     }
-
-    fun stopTimer() {
-        timer.cancel()
-
-    }
-
 
     companion object {
         const val TIMER_UPDATED = "timerUpdated"
@@ -41,7 +38,7 @@ class TimerService : Service() {
     }
 
     override fun onDestroy() {
-        stopTimer()
+        timer.cancel()
         super.onDestroy()
     }
 

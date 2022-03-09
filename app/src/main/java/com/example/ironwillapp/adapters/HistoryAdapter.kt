@@ -10,19 +10,19 @@ import com.example.ironwillapp.databinding.TicketHistoryBinding
 import com.example.ironwillapp.models.History
 
 class HistoryAdapter(private val dataSet: MutableList<History>, val context: Context) :
-    RecyclerView.Adapter<HistoryAdapter.myViewModel>() {
+    RecyclerView.Adapter<HistoryAdapter.MyViewModel>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewModel {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewModel {
 
         val binding: TicketHistoryBinding = DataBindingUtil.inflate(
             LayoutInflater.from(context), R.layout.ticket_history, parent, false
         )
-        return myViewModel(binding)
+        return MyViewModel(binding)
 
     }
 
-    override fun onBindViewHolder(holder: myViewModel, position: Int) {
+    override fun onBindViewHolder(holder: MyViewModel, position: Int) {
         val item = dataSet[position]
         with(holder) {
             binding.historyDays.text = item.days
@@ -34,7 +34,7 @@ class HistoryAdapter(private val dataSet: MutableList<History>, val context: Con
 
     override fun getItemCount(): Int = dataSet.size
 
-    class myViewModel(val binding: TicketHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewModel(val binding: TicketHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
 

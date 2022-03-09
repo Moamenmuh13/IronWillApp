@@ -11,7 +11,7 @@ object HelperMethods {
             activity.supportFragmentManager.beginTransaction()
         //        fragmentTransaction.setCustomAnimations(R.anim.fadein, R.anim.fadeout);
 //        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.replace(R.id.myNavHostFragment, fragment!!, FRAGMENT_TAG)
+        fragmentTransaction.replace(R.id.nav_host_fragment, fragment!!, FRAGMENT_TAG)
         fragmentTransaction.commit()
     }
 
@@ -21,7 +21,7 @@ object HelperMethods {
         if (activity.supportFragmentManager.backStackEntryCount > 0) {
             activity.supportFragmentManager.popBackStackImmediate()
         }
-        fragmentTransaction.replace(R.id.myNavHostFragment, fragment!!, FRAGMENT_TAG)
+        fragmentTransaction.replace(R.id.nav_host_fragment, fragment!!, FRAGMENT_TAG)
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
         fragmentTransaction.commit()

@@ -11,21 +11,21 @@ import com.example.ironwillapp.databinding.TicketRanksBinding
 import com.example.ironwillapp.models.Ranks
 
 class RanksAdapter(private var dataSet: MutableList<Ranks>, private val context: Context) :
-    RecyclerView.Adapter<RanksAdapter.myViewHolder>() {
+    RecyclerView.Adapter<RanksAdapter.MyViewHolder>() {
 
-    inner class myViewHolder(val binding: TicketRanksBinding) :
+    inner class MyViewHolder(val binding: TicketRanksBinding) :
         RecyclerView.ViewHolder(binding.root) {
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding: TicketRanksBinding = DataBindingUtil.inflate(
             LayoutInflater.from(context), R.layout.ticket_ranks, parent, false
         )
-        return myViewHolder(binding)
+        return MyViewHolder(binding)
     }
 
 
-    override fun onBindViewHolder(holder: myViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = dataSet[position]
         with(holder) {
             with(item) {
@@ -36,10 +36,7 @@ class RanksAdapter(private var dataSet: MutableList<Ranks>, private val context:
                 }
             }
         }
-
     }
 
     override fun getItemCount(): Int = dataSet.size
-
-
 }

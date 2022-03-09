@@ -5,176 +5,185 @@
 
     <!--    <data></data>-->
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="120"
         tools:context=".ui.activities.MainActivity">
 
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="@style/Widget.MaterialComponents.CircularProgressIndicator"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/circle_shape2"
-            android:indeterminate="false"
-            android:max="24"
-            android:progress="0"
-            android:progressDrawable="@drawable/circle_shape" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="185dp"
-            android:layout_marginEnd="-2dp"
-            android:gravity="center_horizontal"
+            android:layout_height="0dp"
+            android:layout_weight="80"
+            android:layout_margin="20dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/days"
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.MaterialComponents.CircularProgressIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/circle_shape2"
+                android:indeterminate="false"
+                android:max="24"
+                android:progress="0"
+                android:progressDrawable="@drawable/circle_shape" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/lato"
-                android:gravity="center"
-                android:minWidth="100dp"
-                android:minHeight="45dp"
-                android:textColor="@color/black_text"
-                android:textSize="26sp" />
-
-            <TextView
-                android:id="@+id/timer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_light"
-                android:gravity="center"
-                android:textColor="@color/black_text"
-                android:textSize="28sp"
-                android:textStyle="normal" />
-
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/startBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="69dp"
-            android:layout_marginBottom="213dp"
-            android:text="@string/start"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/resetBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="73dp"
-            android:layout_marginBottom="213dp"
-            android:text="@string/reset"
-            android:visibility="gone" />
-
-
-        <Button
-            android:id="@+id/start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/quot"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="159dp"
-            android:layout_marginBottom="208dp"
-            android:text="@string/start"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/quot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginBottom="164dp"
-            android:fontFamily="@font/lato"
-            android:gravity="center"
-            android:text="@string/quot"
-            android:textColor="#1a1a1a"
-            android:textSize="18sp" />
-
-        <LinearLayout
-            android:id="@+id/rankBtn"
-            android:layout_width="70dp"
-            android:layout_height="90dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="80dp"
-            android:layout_marginBottom="35dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/border"
-                android:contentDescription="@string/my_rank"
-                app:srcCompat="@drawable/ic_star_24" />
-
-            <TextView
-                android:id="@+id/myRank"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/lato"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="185dp"
                 android:gravity="center_horizontal"
-                android:text="@string/my_rank"
-                android:textColor="@color/black_text"
-                android:textSize="16sp" />
-        </LinearLayout>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center"
+                    android:textColor="@color/black_text"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_light"
+                    android:gravity="center"
+                    android:textColor="@color/black_text"
+                    android:textSize="28sp"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/historyBtn"
-            android:layout_width="70dp"
-            android:layout_height="90dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="80dp"
-            android:layout_marginBottom="35dp"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/border"
-                android:contentDescription="@string/history"
-                app:srcCompat="@drawable/ic_history_24" />
 
-            <TextView
-                android:id="@+id/history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/lato"
-                android:gravity="center"
-                android:text="@string/history"
-                android:textColor="@color/black_text"
-                android:textSize="16sp" />
+            <Button
+                android:id="@+id/startBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="@string/start"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/resetBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/reset"
+                android:visibility="visible" />
 
         </LinearLayout>
 
 
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="40"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/quot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:text="@string/quot"
+                android:textColor="#1a1a1a"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/writer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:text="@string/writer"
+                android:textColor="#1a1a1a"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/rankBtn"
+                    android:layout_width="70dp"
+                    android:layout_height="90dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="80dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/border"
+                        android:contentDescription="@string/my_rank"
+                        app:srcCompat="@drawable/ic_star_24" />
+
+                    <TextView
+                        android:id="@+id/myRank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center_horizontal"
+                        android:text="@string/my_rank"
+                        android:textColor="@color/black_text"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/historyBtn"
+                    android:layout_width="70dp"
+                    android:layout_height="90dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="80dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/border"
+                        android:contentDescription="@string/history"
+                        app:srcCompat="@drawable/ic_history_24" />
+
+                    <TextView
+                        android:id="@+id/history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center"
+                        android:text="@string/history"
+                        android:textColor="@color/black_text"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 </layout>

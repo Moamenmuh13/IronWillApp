@@ -15,14 +15,9 @@ import com.example.ironwillapp.ui.activities.MainActivity
 
 
 class RankFragment : Fragment() {
-    private lateinit var binding: FragmentMyRankBinding
-
+    private var _binding: FragmentMyRankBinding? = null
+    private val binding get() = _binding!!
     lateinit var recyclerView: RecyclerView
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +25,7 @@ class RankFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
 
-        binding = DataBindingUtil.inflate(
+        _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_my_rank, container, false
         )
         return binding.root
@@ -44,7 +39,10 @@ class RankFragment : Fragment() {
         binding.myRankRecyclerView.adapter = RanksAdapter(dataSource, activity as MainActivity)
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
 
 

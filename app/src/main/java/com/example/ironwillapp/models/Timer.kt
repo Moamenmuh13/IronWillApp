@@ -6,25 +6,13 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "timer_table")
-class Timer constructor(id: Int, daysCount: Int, timerCount: Double) {
-
-
-    constructor() : this(0, 0, 0.0)
-
-    @PrimaryKey
-    var id = id
-
+class Timer constructor(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
     @ColumnInfo
-    var timerCount = timerCount
-        get() = field
-        set(value) {
-            field = value
-        }
-
+    var daysCount: Int,
     @ColumnInfo
-    var daysCount = daysCount
-        get() = field
-        set(value) {
-            field = value
-        }
+    var timerCount: Double
+) {
+
 }

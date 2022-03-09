@@ -14,18 +14,15 @@ import com.example.ironwillapp.ui.activities.MainActivity
 
 class HistoryFragment : Fragment() {
 
-    private lateinit var binding: FragmentHistoryBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private var _binding: FragmentHistoryBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = DataBindingUtil.inflate(
+        _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_history, container, false
         )
         return binding.root
@@ -39,4 +36,9 @@ class HistoryFragment : Fragment() {
 
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+
+    }
 }
